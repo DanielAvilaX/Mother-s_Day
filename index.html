@@ -1,62 +1,49 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="es">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Para la mujer más bella</title>
-  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
-  <main>
-    <div class="stack">
-      <div class="card">
-        <video src="images/video1.mp4" autoplay loop muted playsinline></video>
-
-      </div>
-      <div class="card">
-        <video src="images/video2.mp4" autoplay loop muted playsinline></video>
-
-      </div>
-      <div class="card">
-        <video src="images/video3.mp4" autoplay loop muted playsinline></video>
-      </div>
-      <div class="card">
-        <video src="images/video4.mp4" autoplay loop muted playsinline></video>
-
-      </div>
-      <div class="card">
-        <video src="images/video5.mp4" autoplay loop muted playsinline></video>
-      </div>
-      <div class="card">
-        <video src="images/video6.mp4" autoplay loop muted playsinline></video>
-      </div>
-      <div class="card">
-        <video src="images/video7.mp4" autoplay loop muted playsinline></video>
+  <div class="main-container">
+    <div class="videos-carousel">
+      <div class="videos">
+        <div class="video-card"><video src="images/video1.mp4" autoplay loop muted playsinline></video></div>
+        <div class="video-card"><video src="images/video2.mp4" autoplay loop muted playsinline></video></div>
+        <div class="video-card"><video src="images/video3.mp4" autoplay loop muted playsinline></video></div>
+        <div class="video-card"><video src="images/video4.mp4" autoplay loop muted playsinline></video></div>
+        <div class="video-card"><video src="images/video5.mp4" autoplay loop muted playsinline></video></div>
+        <div class="video-card"><video src="images/video6.mp4" autoplay loop muted playsinline></video></div>
+        <div class="video-card"><video src="images/video7.mp4" autoplay loop muted playsinline></video></div>
       </div>
     </div>
-    <div class="content">
+
+    <div class="mensaje">
       <h1>Para la mujer más bella</h1>
-      <p style="margin-left: 20px; font-style: italic;" class="typing-animation">
-        Madresita, <br>
-        Quiero dedicarte estas palabras desde lo más profundo de mi corazón para agradecerte por todo lo que haces por
-        mí, día tras día, sin esperar nada a cambio. Tu amor incondicional es el refugio donde siempre encuentro paz, y
-        tu apoyo constante es la fuerza que me impulsa a seguir adelante, incluso en los momentos más oscuros. Eres mi
-        inspiración, mi guía y mi modelo a seguir. Cada sacrificio que has hecho, cada sonrisa que me has regalado, y
-        cada palabra de aliento que me has dado, han dejado una huella imborrable en mi vida. Me esfuerzo cada día por
-        ser una mejor persona porque quiero reflejar al menos una pequeña parte de la grandeza que veo en ti. Has estado
-        a mi lado en los momentos más difíciles, brindándome tu sabiduría, tu paciencia infinita y tu amor
-        inquebrantable. No hay palabras suficientes para expresar cuánto te valoro y cuánto significas para mí. Eres mi
-        mayor bendición, mi mayor orgullo, y mi mayor razón para sonreír. Gracias por ser la luz que ilumina mi camino,
-        por ser la fortaleza que me sostiene, y por ser la maravillosa madre que eres. Te amo más de lo que las palabras
-        pueden expresar, y siempre estaré agradecido por tenerte en mi vida.
-        <br>
-        <br>
-        Santi.
-      </p>
+      <p class="texto" id="mensaje"></p>
     </div>
-  </main>
-  <script src="./script.js"></script>
-</body>
+  </div>
 
+  <script>
+    const mensaje = `Madrecita,
+Madresita,
+Quiero dedicarte estas palabras desde lo más profundo de mi corazón para agradecerte por todo lo que haces por mí, día tras día, sin esperar nada a cambio. Tu amor incondicional es el refugio donde siempre encuentro paz, y tu apoyo constante es la fuerza que me impulsa a seguir adelante, incluso en los momentos más oscuros. Eres mi inspiración, mi guía y mi modelo a seguir. Cada sacrificio que has hecho, cada sonrisa que me has regalado, y cada palabra de aliento que me has dado, han dejado una huella imborrable en mi vida. Me esfuerzo cada día por ser una mejor persona porque quiero reflejar al menos una pequeña parte de la grandeza que veo en ti. Has estado a mi lado en los momentos más difíciles, brindándome tu sabiduría, tu paciencia infinita y tu amor inquebrantable. No hay palabras suficientes para expresar cuánto te valoro y cuánto significas para mí. Eres mi mayor bendición, mi mayor orgullo, y mi mayor razón para sonreír. Gracias por ser la luz que ilumina mi camino, por ser la fortaleza que me sostiene, y por ser la maravillosa madre que eres. Te amo más de lo que las palabras pueden expresar, y siempre estaré agradecido por tenerte en mi vida.
+Santi.`;
+
+    const destino = document.getElementById('mensaje');
+    let index = 0;
+
+    function escribir() {
+      if (index < mensaje.length) {
+        destino.innerHTML += mensaje.charAt(index);
+        index++;
+        setTimeout(escribir, 30);
+      }
+    }
+
+    window.onload = escribir;
+  </script>
+</body>
 </html>

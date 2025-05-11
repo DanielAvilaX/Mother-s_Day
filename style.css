@@ -85,8 +85,8 @@ main {
   transform: translate(-50%, -50%);
   top: 50%;
   left: 50%;
-  width: 450px;
-  height: 600px;
+  width: 350px;
+  height: 500px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -273,4 +273,57 @@ main {
   object-fit: cover;
   border-radius: inherit;
   display: block;
+}
+@media (max-width: 768px) {
+  main {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    gap: 40px;
+    padding: 20px;
+  }
+
+  .stack {
+    width: 280px;
+    height: 400px;
+    margin: 0 auto;
+  }
+
+  .stack .card {
+    width: 280px;
+    height: 400px;
+  }
+
+  .content {
+    text-align: left;
+    padding: 0 20px;
+  }
+
+  .content h1 {
+    text-align: center;
+  }
+
+  .content p {
+    font-size: 14px;
+    line-height: 1.6;
+    padding-right: 0;
+  }
+}
+@media (max-width: 1024px) and (min-width: 769px) {
+  .stack {
+    width: 300px;
+    height: 450px;
+  }
+
+  .stack .card {
+    width: 300px;
+    height: 450px;
+  }
+
+  .content {
+    padding-right: 30px;
+  }
+
+  .content p {
+    font-size: 15px;
+  }
 }
